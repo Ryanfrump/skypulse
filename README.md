@@ -1,4 +1,4 @@
-You are going to be building a basic weather application that uses the weather.gov API, found here: [https://www.weather.gov/documentation/services-web-apiLinks to an external site.](https://www.weather.gov/documentation/services-web-api). It will have these pages and sections:
+Iam building a basic weather application that uses the weather.gov API, found here: [https://www.weather.gov/documentation/services-web-apiLinks to an external site.](https://www.weather.gov/documentation/services-web-api). It will have these pages and sections:
 
 - Home
   - Modal with a form to sign in (doesn't do anything yet)
