@@ -27,16 +27,23 @@ document.addEventListener("DOMContentLoaded", async function () {
   const timeAndTemp = function () {
     let times = [];
     let temperatures = [];
-
     for (let i = 0; i < 24; i++) {
       let startTime = forecastData.properties.periods[i].startTime;
       let string = startTime.substring(11, 16);
       times.push(string);
       temperatures.push(forecastData.properties.periods[i].temperature);
+      if (forecastData.properties.periods[i].temperature < 80) {
+        backgroundColor1.push("rgba(75, 192, 192, 0.2)");
+        backroundBorder.push("#0499aa");
+      } else if (forecastData.properties.periods[i].temperature > 80) {
+        backgroundColor1.push("rgba(255,0,0,0.2)");
+        backroundBorder.push("rgb(205, 92, 92)");
+      }
     }
     return { times, temperatures };
   };
-
+  let backroundBorder = [];
+  let backgroundColor1 = [];
   // Get times and temp for labels
   const { times, temperatures } = timeAndTemp();
 
@@ -47,8 +54,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       {
         label: "Temperature",
         data: temperatures,
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "#0499aa",
+        backgroundColor: backgroundColor1,
+        borderColor: backroundBorder,
         borderWidth: 4,
       },
     ],
